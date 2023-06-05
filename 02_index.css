@@ -1,0 +1,16 @@
+table{
+    background-color: rgba(116, 116, 116, 0.5);
+	border: 1px solid black;
+    box-shadow: 0 0.25rem 0.5rem 0;
+	/* border-collapse: collapse; */
+}
+
+.calendar_weekdays{
+    background: #fffa99;
+}
+
+.calendar_dates{
+    background-color: white;
+    width: 7rem;
+    height: 3.5rem;
+}
