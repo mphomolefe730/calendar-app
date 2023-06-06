@@ -1,4 +1,4 @@
-let thisDay = new Date("june 2023, 23");
+let thisDay = new Date();
 document.getElementById("calendar").innerHTML=createCalendar(thisDay);
 
 //function to generate the calendar table
