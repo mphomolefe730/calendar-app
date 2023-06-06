@@ -1,4 +1,4 @@
-let thisDay = new Date();
+let thisDay = new Date("june 2023, 23");
 document.getElementById("calendar").innerHTML=createCalendar(thisDay);
 
 //function to generate the calendar table
@@ -65,12 +65,18 @@ function calDays(calDate){
 
     //each day of the month
     let totalDays = daysInMonth(calDate);
+    let highlightDay = calDate.getDate();
+
     for(let i=1; i<=totalDays; i++){
         day.setDate(i);
         weekDay = day.getDay();
 
         if (weekDay===0) htmlCode += `<tr>`;
-        htmlCode += `<td class="calendar_dates"> ${i} </td>`;
+        if (i===highlightDay){
+            htmlCode += `<td class="calendar_dates" id="calendar_today"> ${i} </td>`;
+        } else{
+            htmlCode += `<td class="calendar_dates"> ${i} </td>`;
+        }
         if (weekDay===6) htmlCode += `</tr>`;
     }
     return htmlCode;

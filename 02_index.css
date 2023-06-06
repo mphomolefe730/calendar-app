@@ -1,16 +1,19 @@
 table{
-    background-color: rgba(116, 116, 116, 0.5);
-	border: 1px solid black;
-    box-shadow: 0 0.25rem 0.5rem 0;
+	border: 1px solid rgba(0, 0, 0, 0.25);
+    /* box-shadow: 0 0.25rem 0.5rem 0; */
+    border-radius: 6px;
 	/* border-collapse: collapse; */
 }
 
-.calendar_weekdays{
-    background: #fffa99;
-}
-
-.calendar_dates{
-    background-color: white;
+.calendar_dates, .calendar_weekdays{
+    background-color: rgba(116, 116, 116, 0.25);
+    border-radius: 3px;
     width: 7rem;
     height: 3.5rem;
+}
+
+#calendar_today{
+    background-color: rgba(0, 255, 225, 0.5);
+    box-shadow: 0 0.25rem 0.5rem 0;
+    border: 0.5px solid rgba(0, 0, 0, 0.25);
 }
