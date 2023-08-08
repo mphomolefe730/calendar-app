@@ -1,8 +1,19 @@
+body{
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: flex-start;
+    justify-content: space-around;
+}
+#calendar{
+    display: flex;
+    width: 100%;
+    max-width: 818px;
+}
 table{
 	border: 1px solid rgba(0, 0, 0, 0.25);
-    /* box-shadow: 0 0.25rem 0.5rem 0; */
     border-radius: 6px;
-	/* border-collapse: collapse; */
 }
 
 .calendar_dates, .calendar_weekdays{
@@ -16,4 +27,46 @@ table{
     background-color: rgba(0, 255, 225, 0.5);
     box-shadow: 0 0.25rem 0.5rem 0;
     border: 0.5px solid rgba(0, 0, 0, 0.25);
+}
+#entryFieldHousing{
+    display: flex;
+    justify-content: space-between;
+    margin: 16px 0;
+    padding: 3px 0;
+    width: 100%;
+    max-width: 818px;
+}
+
+#entryField{
+    height: 35px;
+    padding: 0 3px;
+    width: 85%;
+    border-radius: 5px;
+    border: 0;
+    background-color: rgba(116, 116, 116, 0.15);
+}
+
+#list{
+    padding: 0;
+    max-width: 818px;
+    list-style: none;
+}
+#list li{
+    margin: 5px 0;
+    padding: 10px;
+    height: 1.5rem;
+    font-weight: 600;
+    font-size: larger;
+    border-radius: 5px;
+    background-color: rgba(116, 116, 116, 0.25);
+}
+#list li button{
+    float: right;
+    background-color: rgba(255, 0, 0, 0.5);
+    border: 0;
+    border-radius: 5px;
+}
+
+.done{
+    text-decoration: line-through;
 }

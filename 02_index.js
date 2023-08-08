@@ -1,5 +1,7 @@
 let thisDay = new Date();
+
 document.getElementById("calendar").innerHTML=createCalendar(thisDay);
+document.getElementById('submitButton').addEventListener('click',toDoList);
 
 //function to generate the calendar table
 function createCalendar(calDate) {
@@ -16,9 +18,9 @@ function calCaption(calDate){
     let monthName = ["January","February","March","April","May","June","July",
                     "August","September","October","November","December"];
     let thisMonth = calDate.getMonth();
-    // console.log(`this month is ${thisMonth}`)
+    // console.log(`this month is ${thisMonth}`);
     let thisYear = calDate.getFullYear();
-    //console.log(`this year is ${thisYear}`);
+    // console.log(`this year is ${thisYear}`);
 
     return `<caption> ${monthName[thisMonth]} ${thisYear} </caption>`
 }
@@ -26,9 +28,7 @@ function calCaption(calDate){
 function calWeekdayRow(){
     let dayName = ["SUN","MON","TUE","WED","THUR","FRI","SAT"];
     let rowHTML = "<tr>";
-    for (let i=0; i <dayName.length; i++){
-        rowHTML += `<th class="calendar_weekdays"> ${dayName[i]} </th>`;
-    }
+    dayName.forEach(day=>rowHTML +=`<th class="calendar_weekdays"> ${day} </th>`);
     rowHTML+= "</tr>";
 
     return rowHTML
@@ -80,4 +80,20 @@ function calDays(calDate){
         if (weekDay===6) htmlCode += `</tr>`;
     }
     return htmlCode;
+}
+
+function toDoList(){
+    let list = document.getElementById('list');
+    let li = document.createElement('li');
+    let removeBTN = document.createElement('button');
+    removeBTN.innerText='remove';
+
+    let searchBox = document.getElementById('entryField');
+    li.innerText+=searchBox.value;
+    searchBox.value='';
+
+    li.append(removeBTN);
+    list.append(li);
+    li.addEventListener('click', ()=>li.classList.toggle('done'));
+    removeBTN.addEventListener('click', ()=>removeBTN.parentElement.remove());
 }
