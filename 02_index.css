@@ -54,9 +54,10 @@ table{
 #list li{
     margin: 5px 0;
     padding: 10px;
-    height: 1.5rem;
+    min-height: 1.5rem;
     font-weight: 600;
     font-size: larger;
+    white-space: wrap;
     border-radius: 5px;
     background-color: rgba(116, 116, 116, 0.25);
 }
